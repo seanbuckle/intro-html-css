@@ -5,8 +5,9 @@
 }
 
 :root{
-    --body-clr: #121212;
-    --txt-clr: #fff;
+    color-scheme: light dark;
+    --clr-body: light-dark(#fafafa,#121212);
+    --clr-txt: light-dark(#000000,#fafafa);
 }
 
 html,body{
@@ -16,8 +17,8 @@ html,body{
 body{
     display: grid;
     grid-template-rows: auto 1fr auto;
-    background-color: var(--body-clr);
-    color: var(--txt-clr);
+    background-color: var(--clr-body);
+    color: var(--clr-txt);
 }
 header{
     padding: 1rem 1.25rem;
@@ -40,7 +41,7 @@ img{
     display: block;
     aspect-ratio: 1/1;
     object-fit: cover;
-    border: 1px solid #fafafa;
+    border: 1px solid light-dark(#333333,#fafafa);
     border-radius: 50%;
 }
 .wrapper{
@@ -53,7 +54,7 @@ section{
     height: fit-content;
     padding: 1rem;
     border-radius: 1rem;
-    background: rgba(255,255,255,0.05);
+    background: light-dark(rgba(0,0,0,0.05),rgba(255,255,255,0.05));
 }
 a{
     font-size: 1.5rem;
