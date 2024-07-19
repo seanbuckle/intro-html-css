@@ -6,8 +6,12 @@
 
 :root{
     color-scheme: light dark;
+    --clr-primary: rgb(255, 0, 149);
     --clr-body: light-dark(#fafafa,#121212);
+    --clr-surface: light-dark(rgba(0,0,0,0.05),rgba(255,255,255,0.05));
+    --clr-bdr: light-dark(#333333,#fafafa);
     --clr-txt: light-dark(#000000,#fafafa);
+    --clr-txt-decor: #00ff6a;
 }
 
 html,body{
@@ -22,6 +26,9 @@ body{
 }
 header{
     padding: 1rem 1.25rem;
+}
+a:has(h1){
+    text-decoration: none;
 }
 h1{
     font-size: clamp(1.25rem, 4vw, 2rem);
@@ -38,11 +45,11 @@ img{
     inline-size: min(75%, 31.25rem);
     block-size: auto;
     margin: 0 auto;
+    border: 1px solid var(--clr-bdr);
+    border-radius: 50%;
     display: block;
     aspect-ratio: 1/1;
     object-fit: cover;
-    border: 1px solid light-dark(#333333,#fafafa);
-    border-radius: 50%;
 }
 .wrapper{
     height: fit-content;
@@ -58,12 +65,14 @@ section{
     height: fit-content;
     padding: 1rem;
     border-radius: 1rem;
-    background: light-dark(rgba(0,0,0,0.05),rgba(255,255,255,0.05));
+    background: var(--clr-surface);
 }
 a{
     font-size: 1.5rem;
-    text-decoration:none;
-    text-decoration-color: #00ff6a;
+    text-decoration-color: var(--clr-txt-decor);
+    &:hover{
+        text-decoration: none;
+    }
 }
 p{
     text-wrap: pretty;
@@ -72,7 +81,7 @@ h2,p{
     text-align: center;
 }
 ul,ol,a{
-    color: rgb(255, 0, 149);
+    color: var(--clr-primary);
 }
 li{
     margin-left: 1rem;
@@ -87,7 +96,7 @@ footer{
         grid-template-columns: repeat(2,1fr);
     }
 }
-@container sections (min-width: 453px){
+@container sections (min-width: 28.313rem){
     section{
         width: unset;
     }
