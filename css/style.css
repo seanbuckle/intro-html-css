@@ -35,7 +35,7 @@ h1,h2{
     text-wrap: balance;
 }
 img{
-    inline-size: min(75%, 500px);
+    inline-size: min(75%, 31.25rem);
     block-size: auto;
     margin: 0 auto;
     display: block;
@@ -45,12 +45,16 @@ img{
     border-radius: 50%;
 }
 .wrapper{
+    height: fit-content;
     margin-top: 2rem;
     display: flex;
+    flex-wrap: wrap;
     gap: 2rem;
     justify-content: center;
+    container: sections / inline-size;
 }
 section{
+    width: 100%;
     height: fit-content;
     padding: 1rem;
     border-radius: 1rem;
@@ -77,9 +81,15 @@ footer{
     padding: 2rem 0;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 37.5rem) {
     main{
         display: grid;
         grid-template-columns: repeat(2,1fr);
     }
+}
+@container sections (min-width: 453px){
+    section{
+        width: unset;
+    }
+    
 }
